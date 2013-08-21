@@ -1,0 +1,29 @@
+var table = $( "#long" ).getElementsByTagName("tr");
+alert(table.length);
+
+var i = 2; //Skip the first two TR's
+var search = true; //Until found still searching
+var odd = "odd";
+var even = "even";
+var evenOrOdd = "";
+
+evenOrOdd = "odd";
+while(search) {
+	var cur = table[i];
+	if(cur != undefined) {
+		while(cur.className == evenOrOdd){
+			//alert(cur.className "is" evenOrOdd);
+			alert(cur.getElementsByTagName("a"));
+			i = i + 1;
+			cur = table[i];
+		}
+		if(evenOrOdd == odd){
+			evenOrOdd = even;
+		} else {
+			evenOrOdd = odd;
+		}
+	}
+	if( i >= table.length){
+		search = false;
+	}
+}
